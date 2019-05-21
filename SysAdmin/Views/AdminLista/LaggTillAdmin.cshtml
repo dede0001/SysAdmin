@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "LaggTillAnvandare";
+}
+
+<h2>Inloggning Admin</h2>
+
+<form action="~/AdminLista/LaggTillAdmin" method="post">
+    <label for="username">Skriv in användarnamn</label>
+    <br />
+    <input type="text" id="anvandarnamn" name="anvandarnamn" />
+    <br />
+
+    <label for="username">Skriv in Email</label>
+    <br />
+    <input type="text" id="email" name="email" />
+    <br />
+    <label>Välj typ av admin</label>
+    <br />
+    <select id="behorighet" name="behorighet">
+        <option value="admintyp">Välj Admin</option>
+        <option value="bloggadmin">Blogg Admin</option>
+        <option value="betalningsadmin">Betalnings Admin</option>
+        <option value="sysadmin">System Admin</option>
+    </select>
+    <br/>
+    <label for="password">Skriv in lösenord</label>
+    <br />
+    <input type="password" id="losenord" name="losenord" />
+    <br />
+
+    <label for="password">Repetera lösenord</label>
+    <br />
+    <input type="password" id="losenordRepeat" name="losenordRepeat" />
+    <br />
+    <br />
+    <input type="submit" value="Registrera" />
+</form>
+
+<p style="color: red">@ViewBag.VisaFelMeddelande</p>
+
+<!--string anvandarnamn, string losenord, string email, string behorighet-->

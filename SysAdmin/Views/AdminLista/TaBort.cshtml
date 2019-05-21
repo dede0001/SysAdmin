@@ -1,0 +1,25 @@
+﻿@model SysAdmin.AdminServerRefferens.Anvandare
+@{
+    ViewBag.Title = "TaBort";
+}
+
+<h2>Vill du ta bort denna användare?</h2>
+@Html.DisplayFor(model => model.Anvandarnamn)
+@Html.DisplayFor(model => model.Behorighet)
+@Html.DisplayFor(model => model.Email)
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div>
+    <input type="submit" value="Ta bort" />
+</div>
+    <br/>
+<div>
+    @Html.ActionLink("Tillbaka", "Index")
+</div>
+  
+}
+
+

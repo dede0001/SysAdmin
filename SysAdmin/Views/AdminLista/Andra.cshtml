@@ -1,0 +1,46 @@
+﻿@model SysAdmin.AdminServerRefferens.Anvandare
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Ändra användare</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            Behörighet: 
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Behorighet, new SelectList(new List<Object>
+                    {
+                        new { value = "admintyp" , text = "Välj Admin"  },
+                        new { value = "bloggadmin" , text = "Blogg Admin"  },
+                        new { value = "betalningsadmin" , text = "Betalnings Admin" },
+                        new { value = "sysadmin" , text = "System Admin"}
+                    },
+                        "value",
+                        "text",
+                        Model.Behorighet
+                    ))
+
+                    @Html.ValidationMessageFor(model => model.Behorighet, "", new { @class = "text-danger" })
+</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Spara" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Tillbaka till listan", "Index")
+</div>

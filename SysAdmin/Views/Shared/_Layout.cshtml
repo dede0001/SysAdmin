@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <title>Administrering</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <img class="navbar-brand mb-0 h1 nav-head" src="~/assets/img/handshake-logo-2.png" alt="Köp och sälj">
+            <!--<span class="navbar-brand mb-0 h1">Köp och sälj</span>-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost:55715/AdminLista"><span class="d-md-none">Grupp 1 - </span>Inloggning</a>
+                    </li>                
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://193.10.202.72/Annons"><span class="d-md-none">Grupp 2 - </span>Annonstjänst</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://193.10.202.73/betalningservice/Service1.svc"><span class="d-md-none">Grupp 3 - </span>Betalningstjänst</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://193.10.202.74/Anvandare/"><span class="d-md-none">Grupp 4 - </span>Användartjänst</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="d-md-none">Grupp 5 - </span>Bloggtjänst<span class="sr-only">(current)</span></a>
+                    </li>   
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p> GUI &copy; @DateTime.Now.Year </p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SysAdmin.AdminServerRefferens.Anvandare>
+
+@{
+    ViewBag.Title = "Index";
+}
+<title>Administrering</title>
+
+<h2>Administrering</h2>
+<br />
+<h4>Admins</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Användarnamn
+        </th>
+        <th>
+            Behörighet
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.Behorighet != "Standard" && item.Behorighet != "standard")
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anvandarnamn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Behorighet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+            <td>
+                @Html.ActionLink("Ändra behörighet", "Andra", new { id = item.Id }) |
+                @Html.ActionLink("Tabort", "TaBort", new { id = item.Id })
+            </td>
+        </tr>
+        }
+    }
+
+
+</table>
+@Html.ActionLink("Klicka här för att registrera en ny Admin.", "LaggTillAdmin", new { })
+<br />
+<br />
+
+
+
+
+<h4>Användare</h4>
+<table class="table">
+    <tr>
+        <th>
+            Användarnamn
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Behorighet == "Standard" || item.Behorighet == "standard")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Anvandarnamn)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Tabort", "TaBort", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    }
+
+</table>
+
+

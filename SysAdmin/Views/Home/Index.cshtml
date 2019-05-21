@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Inloggning Admin</h2>
+<center>
+    <form action="~/Home/LoggaIn" method="post">
+        <label for="username">Skriv in användarnamn</label>
+        <br />
+        <input type="text" id="anvandarnamn" name="anvandarnamn" />
+        <br />
+        <label for="password">Skriv in Lösenord</label>
+        <br />
+        <input type="password" id="losenord" name="losenord" />
+        <br />
+        <br />
+        <input type="submit" value="Logga in" />
+    </form>
+    <p style="color: red">@ViewBag.alert</p>
+   
+</center>
+
